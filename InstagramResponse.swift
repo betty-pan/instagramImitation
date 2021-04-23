@@ -7,6 +7,8 @@
 
 import Foundation
 
+
+
 struct InstagramResponse:Decodable {
     let graphql:Graphql
     struct Graphql:Decodable {
@@ -53,13 +55,13 @@ struct InstagramResponse:Decodable {
                         struct Edge_liked_by:Decodable {
                             let count:Int
                         }
+                        let taken_at_timestamp: Date
                     }
                 }
             }
         }
     }
 }
-
 
 
 

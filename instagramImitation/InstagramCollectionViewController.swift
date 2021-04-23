@@ -59,6 +59,13 @@ class InstagramCollectionViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDataSource
 
+    @IBSegueAction func showPostDetail(_ coder: NSCoder) -> PostsTableViewController? {
+        guard let row = collectionView.indexPathsForSelectedItems?.first?.row else { return nil }
+        return PostsTableViewController(coder: coder, userInfo: userInfo!, indexPath: row)
+    }
+    
+    
+    
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
